@@ -1,0 +1,26 @@
+#box {
+	position: fixed;
+	left: 50%;
+	top: 20%;
+	transform: translateX(-50%);
+}
+
+p {
+	text-align: center;
+}
+
+#app {
+	width: 500px;
+	height: 500px;
+	display: flex;
+	flex-wrap: wrap;
+	border: 1px solid #fff;
+	background-color: #AEAEAE;
+}
+
+div[name] {
+	width: 100px;
+	height: 100px;
+	background-color: #000;
+	border-radius: 50%;
+}

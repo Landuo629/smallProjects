@@ -1,0 +1,184 @@
+.box {
+	width: 1260px;
+	height: 600px;
+	font-family: Arial, Helvetica, sans-serif;
+	/* 定位加2d移动居中 */
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 30px;
+	display: flex;
+}
+
+.box .boxLeft {
+	flex: 5;
+	border: 1px solid #000;
+	border-radius: 30px 0 0 30px;
+	background-color: #fff;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 1;
+	/* 动画 */
+	animation: leftToRight 1s infinite linear alternate forwards;
+	animation-play-state: paused;
+}
+
+.box .boxLeft .title {
+	padding-top: 10%;
+	font-size: 2em;
+	color: #6495ed;
+	font-weight: bold;
+}
+
+.box .boxLeft input {
+	margin-top: 7%;
+	width: 500px;
+	height: 40px;
+}
+
+.box .boxLeft .inputPasswordBox1 {
+	display: none;
+}
+
+.box .boxRight {
+	flex: 2;
+	border: 1px solid #000;
+	border-radius: 0 30px 30px 0;
+	background-color: #008484;
+	position: relative;
+	z-index: 2;
+	/* 动画 */
+	animation: rightToLeft 1s infinite linear alternate forwards;
+	animation-play-state: paused;
+}
+
+.box .boxRight .title,
+.box .boxRight .content,
+.box .boxRight .input {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.box .boxRight .title {
+	top: 25%;
+	text-align: center;
+	font-size: 2.2em;
+	color: #fff;
+}
+
+.box .boxRight .content {
+	top: 45%;
+	text-align: center;
+	font-size: 1.4em;
+	color: #fff;
+}
+
+.inputSubmit {
+	height: 100px;
+	top: 70%;
+	font-size: 1.6em;
+	padding: 0 1%;
+}
+
+.box .boxLeft .inputSubmit {
+	width: 300px;
+	height: 80px;
+}
+
+.box .boxLeft .inputSubmit:hover {
+	background-color: #fff;
+	/* 动画 */
+	animation: color 10s infinite ease-out alternate forwards;
+}
+
+.box .boxRight .inputSubmit {
+	width: 200px;
+	height: 80px;
+	margin-left: -25%;
+	/* 动画 */
+	animation: translateZ 1s infinite ease-out alternate forwards;
+	animation-play-state: paused;
+}
+
+@keyframes leftToRight {
+	from {
+		left: 0;
+	}
+
+	to {
+		left: 360px;
+		border-radius: 0 30px 30px 0;
+	}
+}
+
+@keyframes rightToLeft {
+	from {
+		left: 0;
+	}
+
+	to {
+		left: -900px;
+		border-radius: 30px 0 0 30px;
+	}
+}
+
+@keyframes translateZ {
+	0% {
+		transform: rotateX(0)
+	}
+
+	100% {
+		transform: rotateX(360deg)
+	}
+}
+
+@keyframes color {
+	0% {
+		background-color: #fff;
+		transform: scale(1.2, 1.2);
+	}
+
+	12% {
+		background-color: #f00;
+		transform: scale(1, 1);
+	}
+
+	25% {
+		background-color: #FF7F00;
+		transform: scale(1.2, 1.2);
+	}
+
+	37% {
+		background-color: #ff0;
+		transform: scale(1, 1);
+	}
+
+	50% {
+		background-color: #0f0;
+		transform: scale(1.2, 1.2);
+	}
+
+	62% {
+		background-color: #0ff;
+		transform: scale(1, 1);
+	}
+
+	75% {
+		background-color: #00f;
+		transform: scale(1.2, 1.2);
+	}
+
+	87% {
+		background-color: #8B00FF;
+		transform: scale(1, 1);
+	}
+
+	100% {
+		background-color: #fff;
+		transform: scale(1.2, 1.2)
+	}
+}
